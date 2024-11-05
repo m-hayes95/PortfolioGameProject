@@ -4,13 +4,13 @@ using UnityEngine.Events;
 
 public class TriggerEvent : MonoBehaviour
 {
-    [SerializeField] private UnityEvent triggerEvent1, triggerEvent2;
+    [SerializeField] private UnityEvent triggerEventEnter, triggerEventExit;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PlayerTag>())
         {
-            triggerEvent1.Invoke();
+            triggerEventEnter.Invoke();
         }
     }
 
@@ -18,7 +18,7 @@ public class TriggerEvent : MonoBehaviour
     {
         if (other.GetComponent<PlayerTag>())
         {
-            triggerEvent2.Invoke();
+            triggerEventExit.Invoke();
         }
     }
 }
