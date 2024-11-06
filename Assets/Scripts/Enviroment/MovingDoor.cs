@@ -10,9 +10,9 @@ public class MovingDoor : MonoBehaviour
     [SerializeField, Range(0f, 20f)] private float collisionRadius = 10f;
     [SerializeField] private Vector3 collisionOffset = new Vector3(0f, 0f, 0f);
     [SerializeField] private LayerMask playerLayerMask;
-    [SerializeField]private bool isDoorOpen = false;
-    [SerializeField]private bool isDoorMoving = false;
-    [SerializeField]private bool isPlayerInRange = false;
+    private bool isDoorOpen = false;
+    private bool isDoorMoving = false;
+
     private Vector3 startPosition;
     
     private void Start()
