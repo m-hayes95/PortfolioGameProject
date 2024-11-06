@@ -16,7 +16,8 @@ GameObject:
   - component: {fileID: 1820409994723301291}
   - component: {fileID: 2967881319660151654}
   - component: {fileID: 4769072293067860924}
-  m_Layer: 0
+  - component: {fileID: 666773821679866375}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,9 +136,9 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1820409994723301291
 MonoBehaviour:
@@ -176,3 +177,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 139e3c8ef60d6294ca0424655ebcfe6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &666773821679866375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2484825901599340812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9005b90fad0d09d49882e95796d73426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableDistance: 6.9
+  interactable:
+    serializedVersion: 2
+    m_Bits: 128

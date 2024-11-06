@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NpcInteraction : MonoBehaviour
+public class ShowInteractPrompt : MonoBehaviour
 {
     [SerializeField] private GameObject promptUI;
     public void DisplayInteractPrompt()
