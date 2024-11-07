@@ -3696,6 +3696,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1573654437}
+  - {fileID: 947051681}
+  - {fileID: 1411861712}
   m_Father: {fileID: 1681053952}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &356844727
@@ -3712,6 +3714,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arcadeCameras:
   - {fileID: 1573654438}
+  - {fileID: 947051682}
+  - {fileID: 1411861711}
 --- !u!1 &357391045
 GameObject:
   m_ObjectHideFlags: 0
@@ -4856,8 +4860,20 @@ PrefabInstance:
       objectReference: {fileID: 2084212999}
     - target: {fileID: 2454587903784800608, guid: 459dd4deef6901f418d40689828588fa, type: 3}
       propertyPath: m_VersionIndex
-      value: 1484
+      value: 1511
       objectReference: {fileID: 0}
+    - target: {fileID: 2973449811284209482, guid: 459dd4deef6901f418d40689828588fa, type: 3}
+      propertyPath: switchCamera
+      value: 
+      objectReference: {fileID: 356844727}
+    - target: {fileID: 2973449811284209482, guid: 459dd4deef6901f418d40689828588fa, type: 3}
+      propertyPath: exitPlayMode.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2094087169}
+    - target: {fileID: 2973449811284209482, guid: 459dd4deef6901f418d40689828588fa, type: 3}
+      propertyPath: enterPlayMode.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2094087169}
     - target: {fileID: 4653646744194197784, guid: 459dd4deef6901f418d40689828588fa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5
@@ -4901,10 +4917,6 @@ PrefabInstance:
     - target: {fileID: 4946624689563330077, guid: 459dd4deef6901f418d40689828588fa, type: 3}
       propertyPath: m_Name
       value: Arcade Machine (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946624689563330077, guid: 459dd4deef6901f418d40689828588fa, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5743,8 +5755,28 @@ PrefabInstance:
       objectReference: {fileID: 1091479675}
     - target: {fileID: 2454587903784800608, guid: 459dd4deef6901f418d40689828588fa, type: 3}
       propertyPath: m_VersionIndex
-      value: 1484
+      value: 1511
       objectReference: {fileID: 0}
+    - target: {fileID: 2973449811284209482, guid: 459dd4deef6901f418d40689828588fa, type: 3}
+      propertyPath: switchDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973449811284209482, guid: 459dd4deef6901f418d40689828588fa, type: 3}
+      propertyPath: switchCamera
+      value: 
+      objectReference: {fileID: 356844727}
+    - target: {fileID: 2973449811284209482, guid: 459dd4deef6901f418d40689828588fa, type: 3}
+      propertyPath: machineNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973449811284209482, guid: 459dd4deef6901f418d40689828588fa, type: 3}
+      propertyPath: exitPlayMode.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2094087169}
+    - target: {fileID: 2973449811284209482, guid: 459dd4deef6901f418d40689828588fa, type: 3}
+      propertyPath: enterPlayMode.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2094087169}
     - target: {fileID: 4653646744194197784, guid: 459dd4deef6901f418d40689828588fa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5
@@ -8718,6 +8750,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1782191310448161722, guid: 4765f03c9638a0b4a861dd01eef3ef4e, type: 3}
   m_PrefabInstance: {fileID: 918839711}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &947051680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 947051681}
+  - component: {fileID: 947051682}
+  m_Layer: 0
+  m_Name: Arcade Machine Camera  (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &947051681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947051680}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.1725715, y: 0.6857252, z: -0.1725715, w: 0.6857252}
+  m_LocalPosition: {x: 19.24, y: 1.44, z: -10.556}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 356844726}
+  m_LocalEulerAnglesHint: {x: 28.252, y: 90, z: 0}
+--- !u!114 &947051682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947051680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Priority:
+    Enabled: 1
+    m_Value: 0
+  OutputChannel: 4
+  StandbyUpdate: 2
+  m_StreamingVersion: 20241001
+  m_LegacyPriority: 0
+  Target:
+    TrackingTarget: {fileID: 0}
+    LookAtTarget: {fileID: 0}
+    CustomLookAtTarget: 0
+  Lens:
+    FieldOfView: 52.1
+    OrthographicSize: 5
+    NearClipPlane: 0.3
+    FarClipPlane: 1000
+    Dutch: 0
+    ModeOverride: 0
+    PhysicalProperties:
+      GateFit: 2
+      SensorSize: {x: 21.946, y: 16.002}
+      LensShift: {x: 0, y: 0}
+      FocusDistance: 10
+      Iso: 200
+      ShutterSpeed: 0.005
+      Aperture: 16
+      BladeCount: 5
+      Curvature: {x: 2, y: 11}
+      BarrelClipping: 0.25
+      Anamorphism: 0
+  BlendHint: 0
 --- !u!1001 &954399718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12447,6 +12554,81 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1411861710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1411861712}
+  - component: {fileID: 1411861711}
+  m_Layer: 0
+  m_Name: Arcade Machine Camera  (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1411861711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411861710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Priority:
+    Enabled: 1
+    m_Value: 0
+  OutputChannel: 4
+  StandbyUpdate: 2
+  m_StreamingVersion: 20241001
+  m_LegacyPriority: 0
+  Target:
+    TrackingTarget: {fileID: 0}
+    LookAtTarget: {fileID: 0}
+    CustomLookAtTarget: 0
+  Lens:
+    FieldOfView: 52.1
+    OrthographicSize: 5
+    NearClipPlane: 0.3
+    FarClipPlane: 1000
+    Dutch: 0
+    ModeOverride: 0
+    PhysicalProperties:
+      GateFit: 2
+      SensorSize: {x: 21.946, y: 16.002}
+      LensShift: {x: 0, y: 0}
+      FocusDistance: 10
+      Iso: 200
+      ShutterSpeed: 0.005
+      Aperture: 16
+      BladeCount: 5
+      Curvature: {x: 2, y: 11}
+      BarrelClipping: 0.25
+      Anamorphism: 0
+  BlendHint: 0
+--- !u!4 &1411861712
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411861710}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.1725715, y: 0.6857252, z: -0.1725715, w: 0.6857252}
+  m_LocalPosition: {x: 19.24, y: 1.44, z: -12.58}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 356844726}
+  m_LocalEulerAnglesHint: {x: 28.252, y: 90, z: 0}
 --- !u!1001 &1437554333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14980,7 +15162,7 @@ GameObject:
   - component: {fileID: 1756904056}
   - component: {fileID: 1756904055}
   - component: {fileID: 1756904059}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18215,6 +18397,17 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2094087169 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1820409994723301291, guid: 176d7254ea8ccde4382a678e0bd64679, type: 3}
+  m_PrefabInstance: {fileID: 9164067965104070002}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094087157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 930816865bb02ed4fb89c876a3322efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &2132587059
 Mesh:
   m_ObjectHideFlags: 0
@@ -18908,8 +19101,28 @@ PrefabInstance:
       objectReference: {fileID: 6799169}
     - target: {fileID: 2454587903784800608, guid: 459dd4deef6901f418d40689828588fa, type: 3}
       propertyPath: m_VersionIndex
-      value: 1484
+      value: 1511
       objectReference: {fileID: 0}
+    - target: {fileID: 2973449811284209482, guid: 459dd4deef6901f418d40689828588fa, type: 3}
+      propertyPath: switchDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973449811284209482, guid: 459dd4deef6901f418d40689828588fa, type: 3}
+      propertyPath: switchCamera
+      value: 
+      objectReference: {fileID: 356844727}
+    - target: {fileID: 2973449811284209482, guid: 459dd4deef6901f418d40689828588fa, type: 3}
+      propertyPath: machineNumber
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973449811284209482, guid: 459dd4deef6901f418d40689828588fa, type: 3}
+      propertyPath: exitPlayMode.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2094087169}
+    - target: {fileID: 2973449811284209482, guid: 459dd4deef6901f418d40689828588fa, type: 3}
+      propertyPath: enterPlayMode.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2094087169}
     - target: {fileID: 4653646744194197784, guid: 459dd4deef6901f418d40689828588fa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5

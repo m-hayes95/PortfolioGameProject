@@ -18,6 +18,7 @@ namespace Player
         }
         private GameObject FindClosestGameObject()
         {
+            // Need to change to a box cast
             GameObject objectFound = null;
             if (Physics.Raycast(
                     transform.position, Vector3.forward, out var hit, interactableDistance, interactable
