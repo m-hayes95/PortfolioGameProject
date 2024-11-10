@@ -6,14 +6,15 @@ namespace Player
     [RequireComponent(typeof(Rigidbody))]
     public class Movement : MonoBehaviour
     {
-        [SerializeField, Range(1f, 20f)] float speed = 10f;
-        private Rigidbody _rb;
+        [SerializeField, Range(1f, 20f)] float moveSpeed = 10f;
+        [SerializeField, Range(1f, 20f)] float rotateSpeed = 10f;
+        private Rigidbody rb;
         private Vector2 moveDirection;
         private bool allowPlayerInput = true;
         
         private void Start()
         {
-            _rb = GetComponent<Rigidbody>();
+            rb = GetComponent<Rigidbody>();
         }
 
         private void FixedUpdate()
@@ -41,7 +42,14 @@ namespace Player
         {
             if (!allowPlayerInput)
                 return;
-            _rb.linearVelocity = new Vector3(moveDirection.x * speed, 0f, moveDirection.y * speed);
+            rb.linearVelocity = new Vector3(moveDirection.x * moveSpeed, 0f, moveDirection.y * moveSpeed);
+            LookForward();
+        }
+
+        private void LookForward()
+        {
+            Vector3 forwardMovement = new Vector3(moveDirection.x, 0f, moveDirection.y);
+            transform.forward = Vector3.Slerp(transform.forward, forwardMovement, (Time.deltaTime * rotateSpeed));
         }
     }
 }

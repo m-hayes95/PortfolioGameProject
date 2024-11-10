@@ -6,8 +6,13 @@ namespace Player
     public class Interact : MonoBehaviour
     {
         [SerializeField, Range(0f,20f)] private float interactableDistance;
-        [SerializeField] private LayerMask interactable;
-        
+        [SerializeField] private LayerMask interactableLayer;
+        private Collider _collider;
+
+        private void Start()
+        {
+            _collider = GetComponent<Collider>();
+        }
         public void InteractWithObject(InputAction.CallbackContext context)
         {
             // without using context confirmation, the event will be called for each phase
@@ -25,18 +30,17 @@ namespace Player
         {
             // Need to change to a box cast
             GameObject objectFound = null;
-            if (Physics.Raycast(
-                    transform.position, Vector3.forward, out var hit, interactableDistance, interactable
-                    ))
+            
+            if (Physics.BoxCast(_collider.bounds.center, transform.localScale*0.5f, transform.forward,
+                    out var hit, transform.rotation, interactableDistance, interactableLayer))
             {
                 objectFound = hit.transform.gameObject;
-                Debug.DrawRay(transform.position, Vector3.forward * interactableDistance, Color.cyan);
+                Debug.DrawRay(transform.position, transform.forward * interactableDistance, Color.cyan);
             }
             else
-                Debug.DrawRay(transform.position, Vector3.forward * interactableDistance, Color.red);
+                Debug.DrawRay(transform.position, transform.forward * interactableDistance, Color.red);
             
             return objectFound;
         }
-        
     }
 }
