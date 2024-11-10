@@ -1,26 +1,47 @@
-using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(PlayerInput), typeof(Rigidbody))]
-public class Movement : MonoBehaviour
+namespace Player
 {
-    [SerializeField, Range(1f, 1000f)] float speed = 10f;
-    private PlayerInput playerInput;
-    private Rigidbody _rb;
-    private void Start()
+    [RequireComponent(typeof(Rigidbody))]
+    public class Movement : MonoBehaviour
     {
-        playerInput = GetComponent<PlayerInput>();
-        _rb = GetComponent<Rigidbody>();
-    }
+        [SerializeField, Range(1f, 20f)] float speed = 10f;
+        private Rigidbody _rb;
+        private Vector2 moveDirection;
+        private bool allowPlayerInput = true;
+        
+        private void Start()
+        {
+            _rb = GetComponent<Rigidbody>();
+        }
 
-    private void FixedUpdate()
-    {
-        HandleMovement();
-    }
-    private void HandleMovement()
-    {
-        Vector2 inputVectorNormalized = playerInput.GetMovementVectorNormalized();
-        Vector3 moveDirection = new Vector3(inputVectorNormalized.x, 0f, inputVectorNormalized.y);
-        _rb.MovePosition(transform.position + moveDirection * (speed * Time.deltaTime));
+        private void FixedUpdate()
+        {
+            HandleMovement();
+        }
+        
+        #region Called through Events
+        public void GetInputVectorNormalized(InputAction.CallbackContext context)
+        {
+            // normalized in  input actions file
+            moveDirection = context.ReadValue<Vector2>();
+        }
+        public void EnablePlayerMovement()
+        {
+            allowPlayerInput = true;
+        }
+        public void DisablePlayerMovement()
+        {
+            allowPlayerInput = false;
+        }
+        #endregion
+        
+        private void HandleMovement()
+        {
+            if (!allowPlayerInput)
+                return;
+            _rb.linearVelocity = new Vector3(moveDirection.x * speed, 0f, moveDirection.y * speed);
+        }
     }
 }

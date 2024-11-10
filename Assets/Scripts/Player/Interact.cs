@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Player
 {
@@ -7,8 +8,12 @@ namespace Player
         [SerializeField, Range(0f,20f)] private float interactableDistance;
         [SerializeField] private LayerMask interactable;
         
-        public void InteractWithObject()
+        public void InteractWithObject(InputAction.CallbackContext context)
         {
+            // without using context confirmation, the event will be called for each phase
+            if (!context.started)
+                return;
+            Debug.Log($"Interact: {context.phase}");
             GameObject interactableObject = FindClosestGameObject();
             if (interactableObject == null) return;
             Debug.Log($"Found Interactable object: {FindClosestGameObject().gameObject.name}");
