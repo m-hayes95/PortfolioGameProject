@@ -4738,7 +4738,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: ae874ca1119f1974da3b9c3cc4081047, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8065,6 +8065,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.474
       objectReference: {fileID: 0}
+    - target: {fileID: 5638479943843078450, guid: 176d7254ea8ccde4382a678e0bd64679, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b66886904f1f0da44a2c0bfb716060d2, type: 2}
+    - target: {fileID: 6187481494843541054, guid: 176d7254ea8ccde4382a678e0bd64679, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b66886904f1f0da44a2c0bfb716060d2, type: 2}
+    - target: {fileID: 7326173994472706390, guid: 176d7254ea8ccde4382a678e0bd64679, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f99c2f606e487bd4ba7c619b09a10f39, type: 2}
+    - target: {fileID: 7756626409865038241, guid: 176d7254ea8ccde4382a678e0bd64679, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b1ec81eca85a9d84ea5f62901c99f89d, type: 2}
     - target: {fileID: 8127269945792282092, guid: 176d7254ea8ccde4382a678e0bd64679, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8073,6 +8089,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.5804644
       objectReference: {fileID: 0}
+    - target: {fileID: 9076275887485931485, guid: 176d7254ea8ccde4382a678e0bd64679, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b66886904f1f0da44a2c0bfb716060d2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
