@@ -28,7 +28,6 @@ namespace Player
         }
         private GameObject FindClosestGameObject()
         {
-            // Need to change to a box cast
             GameObject objectFound = null;
             
             if (Physics.BoxCast(_collider.bounds.center, transform.localScale*0.5f, transform.forward,
