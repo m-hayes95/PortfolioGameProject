@@ -8061,6 +8061,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2967881319660151654, guid: 176d7254ea8ccde4382a678e0bd64679, type: 3}
+      propertyPath: timerReset
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2967881319660151654, guid: 176d7254ea8ccde4382a678e0bd64679, type: 3}
+      propertyPath: timeToCallIdleAnim
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2967881319660151654, guid: 176d7254ea8ccde4382a678e0bd64679, type: 3}
+      propertyPath: idleVariationTriggers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2967881319660151654, guid: 176d7254ea8ccde4382a678e0bd64679, type: 3}
+      propertyPath: 'idleVariationTriggers.Array.data[0]'
+      value: IdleVar1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2967881319660151654, guid: 176d7254ea8ccde4382a678e0bd64679, type: 3}
+      propertyPath: 'idleVariationTriggers.Array.data[1]'
+      value: IdleVar2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2967881319660151654, guid: 176d7254ea8ccde4382a678e0bd64679, type: 3}
+      propertyPath: 'idleVariationTriggers.Array.data[2]'
+      value: IdleVar3
+      objectReference: {fileID: 0}
     - target: {fileID: 4918204796509557806, guid: 176d7254ea8ccde4382a678e0bd64679, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.474
