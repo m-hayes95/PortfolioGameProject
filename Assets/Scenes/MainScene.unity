@@ -1469,6 +1469,38 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &287201771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2712961752087627730, guid: 7234c64ee9af91e479ddadc7073eae7b, type: 3}
+  m_PrefabInstance: {fileID: 5665092081994290498}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &287201773
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287201771}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &319215424 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2449057035926421614, guid: 7234c64ee9af91e479ddadc7073eae7b, type: 3}
@@ -6374,6 +6406,28 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
+--- !u!1 &1573748369 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5714498267760356003, guid: 7234c64ee9af91e479ddadc7073eae7b, type: 3}
+  m_PrefabInstance: {fileID: 5665092081994290498}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1573748371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573748369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bd9be9fae81d564fa7353ae689df3d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  claw: {fileID: 287201771}
+  moveSpeed: 2
+  clawExtensionLength: 0.5
+  useCraneControls: 1
+  moveTaskCompleted: 0
 --- !u!43 &1594315937
 Mesh:
   m_ObjectHideFlags: 0
@@ -8445,6 +8499,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 89714243}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5714498267760356003, guid: 7234c64ee9af91e479ddadc7073eae7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1573748371}
+    - targetCorrespondingSourceObject: {fileID: 2712961752087627730, guid: 7234c64ee9af91e479ddadc7073eae7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 287201773}
     - targetCorrespondingSourceObject: {fileID: 7855867118031088014, guid: 7234c64ee9af91e479ddadc7073eae7b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 423632357}
