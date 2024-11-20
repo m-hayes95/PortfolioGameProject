@@ -1,23 +1,25 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class TriggerEvent : MonoBehaviour
+namespace Events
 {
-    [SerializeField] private UnityEvent triggerEventEnter, triggerEventExit;
-
-    private void OnTriggerEnter(Collider other)
+    public class TriggerEvent : MonoBehaviour
     {
-        if (other.GetComponent<PlayerTag>())
+        [SerializeField] private UnityEvent triggerEventEnter, triggerEventExit;
+        private void OnTriggerEnter(Collider other)
         {
-            triggerEventEnter.Invoke();
+            if (other.GetComponent<PlayerTag>())
+            {
+                triggerEventEnter.Invoke();
+            }
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.GetComponent<PlayerTag>())
+        private void OnTriggerExit(Collider other)
         {
-            triggerEventExit.Invoke();
+            if (other.GetComponent<PlayerTag>())
+            {
+                triggerEventExit.Invoke();
+            }
         }
     }
 }
