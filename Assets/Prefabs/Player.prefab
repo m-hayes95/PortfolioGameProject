@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 193731673116720719}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.47400004, z: 0}
+  m_LocalPosition: {x: 0, y: 0.474, z: 0}
   m_LocalScale: {x: 0.5564511, y: 0.5564511, z: 0.5564511}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7fc9c4d7c03c6dd46b09f67c167e2f84, type: 2}
+  - {fileID: 2100000, guid: b1ec81eca85a9d84ea5f62901c99f89d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -177,7 +177,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ae874ca1119f1974da3b9c3cc4081047, type: 2}
+  - {fileID: 2100000, guid: b66886904f1f0da44a2c0bfb716060d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -234,7 +234,9 @@ GameObject:
   - component: {fileID: 2967881319660151654}
   - component: {fileID: 4769072293067860924}
   - component: {fileID: 666773821679866375}
+  - component: {fileID: 1844865851580838972}
   - component: {fileID: 160173142618128079}
+  - component: {fileID: 4828589847815986251}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -277,8 +279,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8118607, y: 1.4869059, z: 0.79982466}
-  m_Center: {x: -0.011602938, y: 0.22430617, z: -0.006169468}
+  m_Size: {x: 0.8118607, y: 1.6070554, z: 0.79982466}
+  m_Center: {x: -0.011602938, y: 0.16423139, z: -0.006169468}
 --- !u!54 &5730262096724243167
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -320,6 +322,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   rotateSpeed: 20
+  timeToCallIdleAnim: 3
+  timerReset: 3
+  idleVariationTriggers:
+  - IdleVar1
+  - IdleVar2
+  - IdleVar3
 --- !u!114 &4769072293067860924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,6 +356,18 @@ MonoBehaviour:
   interactableLayer:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &1844865851580838972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2484825901599340812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1a2debfc368e345a7befcbcdb230e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &160173142618128079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,11 +493,101 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
-  m_NeverAutoSwitchControlSchemes: 0
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a9b1f5d0-424b-4f2d-8a3c-70195807c9b4
+    m_ActionName: 'CraneGame/Leave[/Keyboard/e,/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Arcade.CraneGame, Assembly-CSharp
+        m_MethodName: GrabSequence
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 47ab7847-d389-42ff-8899-e1fd2b941667
+    m_ActionName: 'CraneGame/Action[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Arcade.CraneGame, Assembly-CSharp
+        m_MethodName: MoveRight
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5bbb9470-3290-4e95-9074-98e7d8bb0c77
+    m_ActionName: 'CraneGame/MoveRight[/Keyboard/d,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Arcade.CraneGame, Assembly-CSharp
+        m_MethodName: MoveUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5949fa1a-a070-42e2-8b0e-02178ef2ff83
+    m_ActionName: 'CraneGame/MoveUp[/Keyboard/w,/Keyboard/upArrow]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Arcade.CraneGame, Assembly-CSharp
+        m_MethodName: MoveDown
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 15ae099b-30ad-479e-a308-2563c76e3896
+    m_ActionName: 'CraneGame/MoveDown[/Keyboard/downArrow,/Keyboard/s]'
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &4828589847815986251
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2484825901599340812}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c69dc172721c7d74db155afabb54023c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4245811045671033017
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,8 +649,8 @@ Transform:
   m_GameObject: {fileID: 5102822043337852604}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.17971033, y: 0.12040587, z: 0.4331019}
-  m_LocalScale: {x: 0.17976001, y: 0.17976001, z: -0.1831961}
+  m_LocalPosition: {x: 0.17971033, y: 0.1204059, z: 0.4331019}
+  m_LocalScale: {x: 0.17976, y: 0.17976, z: -0.1831961}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4918204796509557806}
@@ -576,7 +686,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ae874ca1119f1974da3b9c3cc4081047, type: 2}
+  - {fileID: 2100000, guid: b66886904f1f0da44a2c0bfb716060d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -684,7 +794,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7fc9c4d7c03c6dd46b09f67c167e2f84, type: 2}
+  - {fileID: 2100000, guid: b66886904f1f0da44a2c0bfb716060d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -755,7 +865,7 @@ Transform:
   m_GameObject: {fileID: 7653846736106001475}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.58046436, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5804644, z: 0}
   m_LocalScale: {x: 0.06962445, y: 0.25973397, z: 0.06962445}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -863,7 +973,7 @@ Transform:
   m_GameObject: {fileID: 8765797589236523755}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.22999996, z: 0}
+  m_LocalPosition: {x: 0, y: -0.23, z: 0}
   m_LocalScale: {x: 0.81615, y: 0.81615, z: 0.81615}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -900,7 +1010,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7fc9c4d7c03c6dd46b09f67c167e2f84, type: 2}
+  - {fileID: 2100000, guid: f99c2f606e487bd4ba7c619b09a10f39, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -22,23 +22,36 @@ namespace Arcade
         [SerializeField, Tooltip("Add each of the claw hands here")] private GameObject[] clawHands;
         [SerializeField] private float rayLength;
         [SerializeField] private LayerMask gotchaLayerMask;
-       
+
+        private Vector3 homePosition;
         private bool useCraneControls;
         private bool isClawMoving, isCarryingObject;
+
+        private void Start()
+        {
+            // Return to this position when returning home
+            homePosition = transform.position;
+        }
 
         private void FixedUpdate()
         {
             TryCarryObject();
         }
 
+        public void MoveClaw(Vector3 moveDirection)
+        {
+            transform.position += moveDirection * (moveSpeed * Time.deltaTime);
+            Debug.Log($"Moved direction: {moveDirection}");
+        }
         public void StartClawGrabSequence()
         {
+            if (isClawMoving)
+                return;
+            Debug.Log("Claw is doing grab sequence");
+            isClawMoving = true;
             // Move the claw to the gotcha ball in sequence (X -> Z - -> Open Claw -> Y -> Wait -> Complete)
             var moveClaw = DOTween.Sequence();
-            //OpenCloseClawTweenSequence(moveClaw, 1, -xRotateAmount);
-            moveClaw.Append(transform.DOLocalMoveX(transform.position.x + xAmount, tweenDuration));
-            moveClaw.Append(transform.DOLocalMoveZ(transform.position.z + zAmount , tweenDuration));
-            OpenCloseClawTweenSequence(moveClaw, 3f, xRotateAmount);
+            OpenCloseClawTweenSequence(moveClaw, 1f, xRotateAmount);
             moveClaw.Append(transform.DOLocalMoveY(transform.position.y - yAmount, tweenDuration));
             moveClaw.PrependInterval(grabWaitTime);
             moveClaw.OnComplete(ReturnClawHome);
@@ -50,8 +63,8 @@ namespace Arcade
             var moveClaw = DOTween.Sequence();
             OpenCloseClawTweenSequence(moveClaw, 1f, -xRotateAmount);
             moveClaw.Append(transform.DOLocalMoveY(transform.position.y + yAmount, tweenDuration));
-            moveClaw.Append(transform.DOLocalMoveZ(transform.position.z - zAmount , tweenDuration));
-            moveClaw.Append(transform.DOLocalMoveX(transform.position.x - xAmount, tweenDuration));
+            moveClaw.Append(transform.DOLocalMoveZ(homePosition.z , tweenDuration));
+            moveClaw.Append(transform.DOLocalMoveX(homePosition.x, tweenDuration));
             moveClaw.OnComplete(OnReturnHome);
         }
 
@@ -69,6 +82,7 @@ namespace Arcade
             var moveClaw = DOTween.Sequence();
             OpenCloseClawTweenSequence(moveClaw, 1, -xRotateAmount);
             Debug.Log("Finished Crane Game");
+            isClawMoving = false;
         }
         private void OpenCloseClawTweenSequence(Sequence sequence, float sequencePosition, float rotateAmount)
         {
