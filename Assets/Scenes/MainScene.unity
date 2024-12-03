@@ -3754,7 +3754,6 @@ MonoBehaviour:
   canMoveRight: 1
   canMoveUp: 1
   canMoveDown: 1
-  playerInput: {fileID: 2094087175}
 --- !u!1 &656333463
 GameObject:
   m_ObjectHideFlags: 0
@@ -10766,17 +10765,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23c8a626595a75b45a52ba80f2eb7db7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2094087175 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 160173142618128079, guid: 176d7254ea8ccde4382a678e0bd64679, type: 3}
-  m_PrefabInstance: {fileID: 9164067965104070002}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!43 &2100403495
