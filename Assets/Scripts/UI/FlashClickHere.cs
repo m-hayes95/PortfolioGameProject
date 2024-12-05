@@ -18,11 +18,9 @@ namespace UI
         }
         private void Update()
         {
-            if (gameObject.activeSelf && !doOnce)
-            {
-                doOnce = true;
-                StartCoroutine(FlashTextOff());
-            }
+            if (!gameObject.activeSelf || doOnce) return;
+            doOnce = true;
+            StartCoroutine(FlashTextOff());
         }
 
         private void SetColors()
