@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 namespace UI.NPCDialogue
 {
     public class DialogueElement : MonoBehaviour, IInteractable
