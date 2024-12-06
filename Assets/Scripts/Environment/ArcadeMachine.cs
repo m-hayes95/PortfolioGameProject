@@ -11,6 +11,22 @@ namespace Environment
         [SerializeField, Range(0,10f)] private float switchDelay;
         [SerializeField] private UnityEvent enterArcadeMode, exitArcadeMode;
         private bool canPlay = true;
+        public void Interact()
+        {
+            // Without delays to switching cameras, the camera switching can get stuck
+            switch (canPlay)
+            {
+                case true:
+                    PlayMachine();
+                    StartCoroutine(KeepInPlayMode());
+                    break;
+                
+                case false:
+                    ExitMachine();
+                    StartCoroutine(KeepPlayModeDisabled());
+                    break;
+            }
+        }
         private void PlayMachine()
         {
             Debug.Log($"Play arcade Machine {gameObject.name}");
@@ -34,22 +50,7 @@ namespace Environment
             yield return new WaitForSeconds(switchDelay);
             canPlay = true;
         }
-        public void Interact()
-        {
-            // Without delays to switching cameras, the camera switching can get stuck
-            switch (canPlay)
-            {
-                case true:
-                    PlayMachine();
-                    StartCoroutine(KeepInPlayMode());
-                    break;
-                
-                case false:
-                    ExitMachine();
-                    StartCoroutine(KeepPlayModeDisabled());
-                    break;
-            }
-        }
+        
     }
 }
 
